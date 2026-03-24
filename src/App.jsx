@@ -3,19 +3,21 @@ import './App.css';
 import Header from './components/Header';
 import Post from './components/molecules/Post/Post';
 import SearchBar from './components/molecules/SearchBar/SearchBar';
-import { postsData, students } from './data';
+import { postsData, students as initialStudents } from './data';
 import StudentList from './components/StudentList';
 import StatisticsData from './components/StatisticsData';
 import AboutAuthor from './components/AboutAuthor';
+import AddStudentForm from './components/organisms/AddStudentForm';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
   
-  // Стан для Практичної роботи 3
+  // Стан для Практичної роботи 3 & 4
   const [showHelp, setShowHelp] = useState(false);
   const [filterActive, setFilterActive] = useState(false);
   const [activeTab, setActiveTab] = useState('list');
+  const [studentsList, setStudentsList] = useState(initialStudents);
 
   const categories = ['All', 'News', 'Updates', 'Tech'];
 
@@ -27,6 +29,10 @@ function App() {
     
     return matchesSearch && matchesCategory;
   });
+
+  const handleAddStudent = (newStudent) => {
+    setStudentsList([...studentsList, newStudent]);
+  };
 
   return (
     <div className="app-container">
@@ -67,8 +73,12 @@ function App() {
           </div>
         </div>
 
-        {/* Практична робота 3: Умовний рендеринг */}
+        {/* Практична робота 3 і 4: Умовний рендеринг та Форми */}
         <div className="students-container">
+          <h2 className="section-title">Практична робота 4: Додавання студента</h2>
+          
+          <AddStudentForm onAddStudent={handleAddStudent} />
+
           <h2 className="section-title">Практична робота 3: Студенти</h2>
           
           <div className="controls-group" style={{ display: 'flex', gap: '10px', marginBottom: '20px', flexWrap: 'wrap' }}>
@@ -90,7 +100,7 @@ function App() {
           {/* Умовний рендеринг з && */}
           {showHelp && (
             <div className="help-panel">
-              <p>Довідка: Дозволяє керувати списками студентів.</p>
+              <p>Довідка: Дозволяє керувати списками студентів. Зверху ви можете додати нових студентів до загального списку.</p>
             </div>
           )}
 
@@ -118,10 +128,10 @@ function App() {
 
           <div className="tab-content" style={{ marginTop: '24px' }}>
             {activeTab === 'list' && (
-              <StudentList allStudents={students} filterActive={filterActive} />
+              <StudentList allStudents={studentsList} filterActive={filterActive} />
             )}
             {activeTab === 'stats' && (
-              <StatisticsData students={students} />
+              <StatisticsData students={studentsList} />
             )}
             {activeTab === 'author' && (
               <AboutAuthor />

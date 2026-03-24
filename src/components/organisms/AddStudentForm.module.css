@@ -1,0 +1,43 @@
+.formPanel {
+  background-color: #ffffff;
+  border-left: 4px solid #1e3a8a; /* темно-синій акцент */
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.1), 0 4px 6px -2px rgba(30, 58, 138, 0.05); /* м'яка тінь з темно-синім відтінком */
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Прибираємо margin-bottom з інпута, бо він вже є в полі FormGroup або обробляється окремо */
+.fieldGroup > div {
+  margin-bottom: 4px;
+}
+
+.errorText {
+  color: #f43f5e; /* кораловий колір */
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.submitWrapper {
+  margin-top: 8px;
+}
