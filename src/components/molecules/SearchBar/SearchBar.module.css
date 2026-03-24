@@ -1,0 +1,33 @@
+.searchContainer {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  /* Ефект Glassmorphism */
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  color: #1f2937;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.searchInput::placeholder {
+  color: #6b7280;
+}
+
+.searchInput:focus {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2); /* м'яка кольорова тінь */
+}

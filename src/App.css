@@ -90,3 +90,44 @@ body {
   font-size: 24px;
 }
 
+.category-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.category-btn.active {
+  background: linear-gradient(135deg, #6ee7b7 0%, #3b82f6 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.4);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px dashed #d1d5db;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+

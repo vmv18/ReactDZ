@@ -5,7 +5,8 @@ export const postsData = [
     avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026024d',
     content: 'Сьогодні ми вивчаємо основи React та створюємо наш перший список компонентів з допомогою методу map()!',
     date: '24 березня 2026',
-    likes: 42
+    likes: 42,
+    category: 'News'
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ export const postsData = [
     avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026704d',
     content: 'CSS Modules - це насправді дуже зручний інструмент для ізоляції стилів. Забула про глобальні конфлікти класів назавжди.',
     date: '23 березня 2026',
-    likes: 128
+    likes: 128,
+    category: 'Tech'
   },
   {
     id: 3,
@@ -21,7 +23,8 @@ export const postsData = [
     avatar: 'https://i.pravatar.cc/150?u=a04258114e29026702d',
     content: 'Не забувайте завжди використовувати атрибут key при рендерингу списків. Це допоможе уникнути проблем зі сприйняттям React змін у DOM.',
     date: '22 березня 2026',
-    likes: 85
+    likes: 85,
+    category: 'Updates'
   }
 ];
 

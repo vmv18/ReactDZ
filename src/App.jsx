@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Post from './components/molecules/Post/Post';
+import SearchBar from './components/molecules/SearchBar/SearchBar';
 import { postsData, students } from './data';
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [activeCategory, setActiveCategory] = useState('All');
+
+  const categories = ['All', 'News', 'Updates', 'Tech'];
+
+  // Фільтрація постів за пошуком і категорією
+  const filteredPosts = postsData.filter((post) => {
+    const matchesSearch = post.content.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                          post.author.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = activeCategory === 'All' || post.category === activeCategory;
+    
+    return matchesSearch && matchesCategory;
+  });
+
   // 1. Сортування студентів за спаданням балів
   const sortedStudents = [...students].sort((a, b) => b.score - a.score);
 
@@ -23,12 +38,38 @@ function App() {
       <Header />
       <main className="main-content">
         
-        {/* Блок з попередніх робіт */}
+        {/* Лабораторна робота №3: Пошук і фільтрація */}
         <div className="posts-container" style={{ marginBottom: '40px' }}>
           <h2 className="section-title">Стрічка новин</h2>
-          {postsData.map((post) => (
-            <Post key={post.id} post={post} />
-          ))}
+          
+          <SearchBar 
+            searchTerm={searchTerm} 
+            onSearchChange={setSearchTerm} 
+          />
+
+          <div className="category-filters">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                className={`category-btn ${activeCategory === cat ? 'active' : ''}`}
+                onClick={() => setActiveCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          <div className="posts-list">
+            {filteredPosts.length > 0 ? (
+              filteredPosts.map((post) => (
+                <Post key={post.id} post={post} />
+              ))
+            ) : (
+              <div className="empty-state">
+                <p>Нічого не знайдено за вашим запитом.</p>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Практична робота №2: Трансформація даних */}
