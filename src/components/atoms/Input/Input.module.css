@@ -1,0 +1,29 @@
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.label {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #d1d5db; /* Тонка ледь помітна рамка */
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+  background-color: #fafafa;
+}
+
+.input:focus {
+  border-color: #10b981; /* Смарагдовий колір при фокусуванні */
+  background-color: #fff;
+}

@@ -1,0 +1,28 @@
+.button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-weight: 500;
+  width: 100%;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.primary {
+  background-color: #10b981; /* Смарагдовий колір */
+  color: #fff;
+  border-color: #10b981;
+}
+
+.secondary {
+  background-color: #4b5563; /* Темно-сірий колір */
+  color: #fff;
+  border-color: #4b5563;
+}

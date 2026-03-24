@@ -1,0 +1,11 @@
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb; /* Ледь помітна рамка */
+  border-radius: 8px; /* Легке заокруглення */
+  padding: 24px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  /* Без важких тіней - лише легка напівпрозора тінь для об'єму (мінімалізм) */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
