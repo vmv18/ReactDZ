@@ -28,9 +28,65 @@ body {
   max-width: 600px;
 }
 
-.feed-title {
+.feed-title, .section-title {
   margin-bottom: 24px;
   color: #111827;
   font-weight: 700;
   font-size: 28px;
 }
+
+.students-container {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.students-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+}
+
+.student-item {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.2s;
+}
+
+.student-item:last-child {
+  border-bottom: none;
+}
+
+.top-students-block {
+  background-color: #ecfdf5; /* Світло-зелений фон */
+  border: 1px solid #10b981; /* Зелена рамка */
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 32px;
+}
+
+.top-students-block .section-title {
+  color: #065f46;
+  font-size: 22px;
+}
+
+.student-item.active-top {
+  border-bottom-color: #a7f3d0;
+  color: #065f46;
+}
+
+.average-score-block {
+  text-align: right;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.accent-text {
+  font-weight: 800;
+  color: #10b981;
+  font-size: 24px;
+}
+
