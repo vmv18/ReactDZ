@@ -1,0 +1,74 @@
+.loginContainer {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fdfbfb; /* soft pastel background */
+  padding: 20px;
+}
+
+.loginCard {
+  background-color: #fff9f5; /* soft peach / beige */
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(251, 146, 60, 0.1); /* peach shadow */
+  text-align: center;
+}
+
+.title {
+  color: #431407; /* dark warm brown */
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #fb923c;
+  font-size: 16px;
+  margin-bottom: 32px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Перевизначаємо стилі інпутів для цієї форми */
+.loginCard input {
+  border-radius: 9999px !important; /* pill-shape */
+  border: 1px solid #fed7aa !important;
+  background-color: #fff !important;
+  padding: 14px 24px !important;
+  transition: all 0.3s ease !important;
+  box-sizing: border-box;
+}
+
+.loginCard input:focus {
+  border-color: #fb923c !important;
+  box-shadow: 0 0 0 4px rgba(251, 146, 60, 0.15) !important;
+  outline: none !important;
+}
+
+/* Перевизначаємо стиль кнопки для цієї форми */
+.loginCard button {
+  width: 100% !important;
+  border-radius: 9999px !important; /* pill-shape */
+  padding: 16px !important;
+  background: linear-gradient(135deg, #fb923c 0%, #f43f5e 100%) !important;
+  border: none !important;
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 10px 20px rgba(244, 63, 94, 0.2) !important;
+  margin-top: 12px !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.loginCard button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 14px 28px rgba(244, 63, 94, 0.3) !important;
+}

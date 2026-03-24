@@ -8,6 +8,8 @@ import Profile from './pages/Profile/Profile';
 import ProfileOverview from './pages/Profile/ProfileOverview';
 import ProfileSettings from './pages/Profile/ProfileSettings';
 import NotFound from './pages/NotFound';
+import Login from './pages/Login/Login';
+import ProtectedRoute from './components/hoc/ProtectedRoute';
 import './App.css';
 
 function App() {
@@ -17,7 +19,12 @@ function App() {
         <Route index element={<Home />} />
         <Route path="feed" element={<Feed />} />
         <Route path="feed/:postId" element={<PostPage />} />
-        <Route path="profile" element={<Profile />}>
+        <Route path="login" element={<Login />} />
+        <Route path="profile" element={
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        }>
           <Route index element={<ProfileOverview />} />
           <Route path="settings" element={<ProfileSettings />} />
         </Route>
