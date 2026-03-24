@@ -1,0 +1,17 @@
+.listContainer {
+  margin-top: 32px;
+}
+
+.title {
+  color: #374151;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.empty {
+  color: #9ca3af;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+}

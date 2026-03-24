@@ -27,6 +27,12 @@ const MainLayout = () => {
           >
             Профіль
           </NavLink>
+          <NavLink 
+            to="/pr5" 
+            className={({ isActive }) => isActive ? `${styles.navLink} ${styles.activeLink}` : styles.navLink}
+          >
+            ПР 5
+          </NavLink>
         </nav>
       </header>
       

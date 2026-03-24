@@ -1,0 +1,32 @@
+.userContainer {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08); /* light blue shadow */
+  text-align: center;
+  border-top: 4px solid #3b82f6; /* м'який блакитний акцент */
+  margin-bottom: 24px;
+}
+
+.name {
+  margin: 0 0 8px 0;
+  color: #111827;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.email {
+  margin: 0 0 16px 0;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.roleBadge {
+  display: inline-block;
+  background-color: #eff6ff;
+  color: #3b82f6;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}

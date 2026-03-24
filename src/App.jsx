@@ -9,6 +9,7 @@ import ProfileOverview from './pages/Profile/ProfileOverview';
 import ProfileSettings from './pages/Profile/ProfileSettings';
 import NotFound from './pages/NotFound';
 import Login from './pages/Login/Login';
+import ProfilePage from './pages/ProfilePage';
 import ProtectedRoute from './components/hoc/ProtectedRoute';
 import './App.css';
 
@@ -28,6 +29,7 @@ function App() {
           <Route index element={<ProfileOverview />} />
           <Route path="settings" element={<ProfileSettings />} />
         </Route>
+        <Route path="pr5" element={<ProfilePage />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
