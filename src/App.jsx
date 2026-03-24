@@ -4,10 +4,18 @@ import Header from './components/Header';
 import Post from './components/molecules/Post/Post';
 import SearchBar from './components/molecules/SearchBar/SearchBar';
 import { postsData, students } from './data';
+import StudentList from './components/StudentList';
+import StatisticsData from './components/StatisticsData';
+import AboutAuthor from './components/AboutAuthor';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
+  
+  // Стан для Практичної роботи 3
+  const [showHelp, setShowHelp] = useState(false);
+  const [filterActive, setFilterActive] = useState(false);
+  const [activeTab, setActiveTab] = useState('list');
 
   const categories = ['All', 'News', 'Updates', 'Tech'];
 
@@ -19,19 +27,6 @@ function App() {
     
     return matchesSearch && matchesCategory;
   });
-
-  // 1. Сортування студентів за спаданням балів
-  const sortedStudents = [...students].sort((a, b) => b.score - a.score);
-
-  // 2. Фільтрація тільки активних студентів з балом > 60
-  const activeTopStudents = students
-    .filter(student => student.isActive && student.score > 60);
-
-  // 3. Підрахунок середнього бала всіх активних студентів
-  const activeStudents = students.filter(student => student.isActive);
-  const averageScore = activeStudents.length > 0 
-    ? activeStudents.reduce((acc, student) => acc + student.score, 0) / activeStudents.length
-    : 0;
 
   return (
     <div className="app-container">
@@ -72,38 +67,65 @@ function App() {
           </div>
         </div>
 
-        {/* Практична робота №2: Трансформація даних */}
+        {/* Практична робота 3: Умовний рендеринг */}
         <div className="students-container">
-          <h2 className="section-title">Список всіх студентів (відсортовані)</h2>
-          <ul className="students-list">
-            {sortedStudents.map(student => (
-              <li 
-                key={student.id} 
-                className="student-item"
-                style={!student.isActive ? { 
-                  color: '#9ca3af', 
-                  textDecoration: 'line-through', 
-                  opacity: 0.6 
-                } : {}}
-              >
-                <strong>{student.name}</strong> — {student.score} балів
-              </li>
-            ))}
-          </ul>
-
-          <div className="top-students-block">
-            <h2 className="section-title">Топ активних студентів (бал &gt; 60)</h2>
-            <ul className="students-list">
-              {activeTopStudents.map(student => (
-                <li key={student.id} className="student-item active-top">
-                  <strong>{student.name}</strong> — {student.score} балів
-                </li>
-              ))}
-            </ul>
+          <h2 className="section-title">Практична робота 3: Студенти</h2>
+          
+          <div className="controls-group" style={{ display: 'flex', gap: '10px', marginBottom: '20px', flexWrap: 'wrap' }}>
+            <button 
+              className="action-btn"
+              onClick={() => setShowHelp(!showHelp)}
+            >
+              {showHelp ? "Приховати інструкцію" : "Показати інструкцію"}
+            </button>
+            
+            <button 
+              className="action-btn"
+              onClick={() => setFilterActive(!filterActive)}
+            >
+              {filterActive ? "Показати всіх" : "Показати тільки успішних"}
+            </button>
           </div>
 
-          <div className="average-score-block">
-            <p>Середній бал активних студентів: <span className="accent-text">{averageScore.toFixed(1)}</span></p>
+          {/* Умовний рендеринг з && */}
+          {showHelp && (
+            <div className="help-panel">
+              <p>Довідка: Дозволяє керувати списками студентів.</p>
+            </div>
+          )}
+
+          {/* Система табів */}
+          <div className="tabs-navigation">
+            <button 
+              className={`tab-pill ${activeTab === 'list' ? 'active-tab' : ''}`}
+              onClick={() => setActiveTab('list')}
+            >
+              Всі студенти
+            </button>
+            <button 
+              className={`tab-pill ${activeTab === 'stats' ? 'active-tab' : ''}`}
+              onClick={() => setActiveTab('stats')}
+            >
+              Статистика
+            </button>
+            <button 
+              className={`tab-pill ${activeTab === 'author' ? 'active-tab' : ''}`}
+              onClick={() => setActiveTab('author')}
+            >
+              Про автора
+            </button>
+          </div>
+
+          <div className="tab-content" style={{ marginTop: '24px' }}>
+            {activeTab === 'list' && (
+              <StudentList allStudents={students} filterActive={filterActive} />
+            )}
+            {activeTab === 'stats' && (
+              <StatisticsData students={students} />
+            )}
+            {activeTab === 'author' && (
+              <AboutAuthor />
+            )}
           </div>
         </div>
 

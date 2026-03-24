@@ -130,4 +130,69 @@ body {
   font-size: 16px;
 }
 
+.action-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.help-panel {
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  border-left: 4px solid #3b82f6;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.help-panel p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 15px;
+}
+
+.tabs-navigation {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 16px;
+}
+
+.tab-pill {
+  padding: 10px 20px;
+  border-radius: 9999px; /* pill-shaped */
+  border: none;
+  background-color: #f3f4f6;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-pill:hover {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.tab-pill.active-tab {
+  background-color: #8b5cf6;
+  color: white;
+  box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.39);
+  transform: translateY(-2px);
+}
+
+
 
