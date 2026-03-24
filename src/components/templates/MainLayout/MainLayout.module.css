@@ -1,0 +1,55 @@
+.layoutContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafb;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* легка тінь */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.navLink {
+  text-decoration: none;
+  font-weight: 500;
+  color: #4b5563;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease; /* плавний перехід */
+}
+
+.navLink:hover {
+  color: #f97316;
+}
+
+.activeLink {
+  color: #f97316; /* теплий помаранчевий */
+  border-bottom-color: #f97316;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
